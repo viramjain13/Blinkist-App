@@ -9,7 +9,7 @@ import {
   ThemeProvider,
 } from "@material-ui/core";
 import Button from "../../atoms/Button/Button";
-
+// import API from "../../../api";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,12 +40,17 @@ const AddBook = (props: any) => {
     setFormData(inputData);
   };
 
-  const addBook = (e:any) => {
+  const addBook = (e: any) => {
     e.preventDefault();
     const bookData = formData;
- 
+    // API.post(`/explore`, bookData).then((res) => {
+    //   console.log(res);
+    //   console.log(res.data, res.status);
+    // });
+    
     console.log("book details submitted", formData);
     alert("Book details added successfully");
+      window.location.reload();
   };
 
   return (
@@ -53,7 +58,7 @@ const AddBook = (props: any) => {
       <Card variant="outlined">
         <CardHeader title="Add Book"></CardHeader>
         <CardContent>
-          <form>
+          <form >
             <TextField
               className={styles.root}
               required

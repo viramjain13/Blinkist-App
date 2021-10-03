@@ -1,11 +1,9 @@
-import React from "react";
-import "./App.css";
-import Routes from "./routes";
+import MainPage from '../src/components/pages/MainPage/MainPage';
 
 function App() {
   return (
     <div className="App">
-      <Routes />
+      <MainPage />
     </div>
   );
 }

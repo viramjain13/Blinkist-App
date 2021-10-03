@@ -1,75 +1,53 @@
 import React from 'react';
-import { makeStyles, Theme } from "@material-ui/core/styles";
-import { Card, CardContent,CardActions, Typography,Grid,ThemeProvider, Button } from '@material-ui/core';
-import { AccessTime, PersonOutline, MoreHoriz } from '@material-ui/icons';
-import baseTheme from '../../../themes/theme';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import {ListItem,ListItemIcon} from '@material-ui/core';
+import { AiOutlineFieldTime } from "react-icons/ai";
+import theme from "../../../themes/theme";
 
-
-const useStyles = makeStyles((theme:Theme) => ({
-  root:{
-    width: "18rem",
-    borderRadius: "3%",
-    borderBottomRightRadius: "2%",
-    borderBottomLeftRadius: "2%",
-    display: "grid",
-    background:"rgb(250,250,250)",
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+    margin:theme.spacing(1.25),
   },
-  image: {
-    width: "inherit",
-    borderRadius: "inherit",
-    borderBottomRightRadius: "unset",
-    borderBottomLeftRadius: "unset"
+  divider: {
+    borderBottom: "1px solid",
   },
-  bookButton:{
-    padding: theme.spacing(1),
-    cursor: "pointer",
-    backgroundColor:"#2ce080",
-    color: "black"
-  }
+});
 
-}));
+const BookCard = ({title, author, time, buttonTitle,image,onClick}:any) => {
+  const classes = useStyles();
 
+  return (
+    <Card className={classes.root}>
+      <CardActionArea>
+      <img src={image} style={{height: '100%', width:'100%'}} />
+        <CardContent style={{height:'120px'}}>
+          <Typography gutterBottom variant="h5" component="h2">
+            {title}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {author}
+          </Typography>
+          <ListItem >
+            <ListItemIcon><AiOutlineFieldTime/></ListItemIcon>
+            <Typography>{time}min</Typography>
+          </ListItem>
+        </CardContent>
+      </CardActionArea>
+      <div className={classes.divider}></div>
+      <CardActions>
+        <Button size="small" color="primary" onClick={onClick}>
+          {buttonTitle}
+        </Button>
+      </CardActions>
+    </Card>
+  );
+}
 
-const BookCardComponent = (props:any) => {
-  
-    const styles = useStyles();
-    const { book, btnText, bookStateChange } = props;
-    const changeBookStatus = (f:any,book:any)=>{
-        f(book);
-    };
-    return (
-      <ThemeProvider theme = {baseTheme}>
-        <Card className={styles.root} variant="outlined">
-          <img
-            className={styles.image}
-            src={book.imgSrc}
-            title={book.name}
-            alt = {book.imgAlt}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="subtitle1">
-                {book.name}
-            </Typography>
-            <Typography variant="subtitle2">
-              {book.author}
-            </Typography>
-            <br/>
-            <Grid container justifyContent="space-between" >
-              <Grid item ><AccessTime fontSize="small"  style={{marginTop: -2}} />{book.readTime}</Grid>
-              <Grid item><PersonOutline fontSize="small"  style={{marginTop: -2}} />{book.readCount}</Grid>
-            </Grid>
-
-          </CardContent>
-          <Grid container justifyContent="space-between">
-          <Grid item ><CardActions>{btnText.length > 0 && (<Button className={styles.bookButton} onClick={()=>changeBookStatus(bookStateChange, book)} variant="contained">{btnText}</Button>)}</CardActions></Grid>
-            <Grid item ><MoreHoriz fontSize="small" style={{margin: "1rem"}} /></Grid>
-          </Grid>
-
-        </Card>   
-      </ThemeProvider>
-      );
-    
-  };
-
-
-export default BookCardComponent;
+export default BookCard;
