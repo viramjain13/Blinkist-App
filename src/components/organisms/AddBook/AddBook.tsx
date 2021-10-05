@@ -6,7 +6,7 @@ import {
   CardContent,
   CardHeader,
   TextField,
-  ThemeProvider,
+  
 } from "@material-ui/core";
 import Button from "../../atoms/Button/Button";
 // import API from "../../../api";
@@ -21,15 +21,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const AddBook = (props: any) => {
-  const { btnTitle } = props;
+  
   const styles = useStyles();
-  const [btnState, setBtnState] = useState(true);
+  
   const [formData, setFormData] = useState({
     name: "",
     author: "",
     category: "",
     readCount: "",
-    readTime: "",
+    
     imgSrc: "",
     status: "E",
   });
@@ -42,7 +42,7 @@ const AddBook = (props: any) => {
 
   const addBook = (e: any) => {
     e.preventDefault();
-    const bookData = formData;
+    
     // API.post(`/explore`, bookData).then((res) => {
     //   console.log(res);
     //   console.log(res.data, res.status);
@@ -100,16 +100,7 @@ const AddBook = (props: any) => {
               label="Read Count"
               onChange={(e) => handleChange(e)}
             />
-            <TextField
-              className={styles.root}
-              type="text"
-              fullWidth
-              id="readTime"
-              placeholder="Enter Read Time"
-              variant="outlined"
-              label="Read Time"
-              onChange={(e) => handleChange(e)}
-            />
+        
             <TextField
               className={styles.root}
               type="text"

@@ -26,7 +26,7 @@ const BookCard = ({title, author, time, buttonTitle,image,onClick}:any) => {
   return (
     <Card className={classes.root}>
       <CardActionArea>
-      <img src={image} style={{height: '100%', width:'100%'}} />
+      <img src={image} style={{height: '100%', width:'100%'}} alt='' />
         <CardContent style={{height:'120px'}}>
           <Typography gutterBottom variant="h5" component="h2">
             {title}

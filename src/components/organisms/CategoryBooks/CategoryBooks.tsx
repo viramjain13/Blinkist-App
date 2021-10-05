@@ -4,7 +4,6 @@ import HomeSearch from "../../molecules/SearchInput/SearchInput";
 import BookCard from "../../molecules/BookCard/BookCard";
 import { Grid } from "@material-ui/core";
 
-const data1 = require("../../../data/books.json");
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -71,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CategoryBooks({  getExploreCategory,booksList1}:any) {
-  const classes = useStyles();
+  
   const [searchTerm, setSearchTerm] = useState("");
   const filterCategory = (bookId:any) => {
     getExploreCategory(bookId);

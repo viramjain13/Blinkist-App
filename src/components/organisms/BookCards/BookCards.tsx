@@ -1,22 +1,21 @@
 import React from "react";
 import BookCard from "../../molecules/BookCard/BookCard";
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 
 const Transition:any = React.forwardRef(function Transition(props:any, ref:any) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
-const useStyles = makeStyles((theme) => ({}));
+// const useStyles = makeStyles((theme) => ({}));
 
 const BookCards = ({ booksList }:any) => {
-  const classes = useStyles();
+  
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {

@@ -21,7 +21,7 @@ import BookCards from "../BookCards/BookCards";
 import AccountMenu from "../AccountMenu/AccountMenu";
 import Image from "../../atoms/Image/Image";
 import AddBook from "../AddBook/AddBook";
-import libraryBooks from "material-ui/svg-icons/av/library-books";
+// import libraryBooks from "material-ui/svg-icons/av/library-books";
 const data1 = require("../../../data/books.json");
 const category = require("../../../category/categories.json");
 const useStyles = makeStyles((theme) => ({
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     display: "grid",
   },
   font: {
-    fontWeight: 600,
+    fontWeight: 500,
   },
   logo: {
     marginRight: theme.spacing(2),
@@ -52,12 +52,15 @@ const useStyles = makeStyles((theme) => ({
   },
   explore: {
     display: "contents",
+    // marginBottom: 200,
+    marginLeft: -30,
+    // marginTop: -15,
   },
   dropdown: {
     fontSize: "xx-large",
   },
   btn: {
-    marginRight: 29,
+    marginRight: 25,
     color: "#03314b",
     fontWeight: "bold",
   },
@@ -67,7 +70,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 1,
   },
   lib: {
-    marginLeft: 50,
+    // marginRight: -100,
+    marginTop:-8,
+    marginLeft: 300,
   },
   divider: {
     borderBottom: "1px solid",
@@ -75,11 +80,11 @@ const useStyles = makeStyles((theme) => ({
   modal: {
     backgroundColor: "#ddd",
     position: "fixed",
-    width: 200,
+    width: 100,
     height: 100,
-    left: 50,
+    left: 30,
     top: 0,
-    marginLeft: -100,
+    marginLeft: -50,
   },
   open: {
     display: "block",
@@ -94,8 +99,8 @@ const useStyles = makeStyles((theme) => ({
     display: "none",
   },
   icon: {
-    marginLeft: -35,
-    marginTop: 18,
+    marginLeft: -29,
+    marginTop: 25,
   },
 }));
 var newLibraryBooks: any = [];
@@ -131,22 +136,22 @@ function TopNavBar() {
   const handleClose = () => {
     setOpen(false);
   };
-  const getBookDetails = (book: any) => {
-    let newBook = {
-      id: book[0],
-      title: book[1],
-      author: book[2],
-      time: book[3],
-      category: book[4],
-      image: book[5],
-    };
-    newLibraryBooks.push(newBook);
-    setLibraryBooks((libraryBooks: any) => [...libraryBooks, newBook]);
-    newTwo.push(newBook);
-    for (let j = 0; j < newTwo.length; j++) {
-      setCategoryBooks((categoryBooks: any) => [...categoryBooks, newTwo[j]]);
-    }
-  };
+  // const getBookDetails = (book: any) => {
+  //   let newBook = {
+  //     id: book[0],
+  //     title: book[1],
+  //     author: book[2],
+  //     time: book[3],
+  //     category: book[4],
+  //     image: book[5],
+  //   };
+  //   newLibraryBooks.push(newBook);
+  //   setLibraryBooks((libraryBooks: any) => [...libraryBooks, newBook]);
+  //   newTwo.push(newBook);
+  //   for (let j = 0; j < newTwo.length; j++) {
+  //     setCategoryBooks((categoryBooks: any) => [...categoryBooks, newTwo[j]]);
+  //   }
+  // };
 
   const onChangeHandler = (e: any) => {
     console.log("on onChangeHandler");
@@ -204,14 +209,13 @@ function TopNavBar() {
     if (displaySearchBar === "none") {
       setDisplaySearchBar("block");
       // setIsClick(true);
-      
     } else {
       setDisplaySearchBar("none");
       // setIsClick(false);
     }
   }
   const textFieldContainerStyle: any = {
-    width: 850,
+    width: 700,
     position: "absolute",
     top: 35,
     left: 550,
@@ -236,7 +240,7 @@ function TopNavBar() {
             <Box component="span" onClick={toggleSearch}>
               <Image
                 src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Search_Icon.svg"
-                styleObject={{ height: 25, width: 25 }}
+                styleObject={{ height: 35, width: 35 }}
               />
             </Box>
           </Grid>
@@ -250,7 +254,7 @@ function TopNavBar() {
               />
             </Box>
           </Container>
-          <Box className={classes.title}>
+          
             <Grid item xs={6} className={classes.explore} onClick={explore}>
               <Button className={classes.btn} title="Explore">
                 {" "}
@@ -261,27 +265,28 @@ function TopNavBar() {
                 <ExpandMoreIcon className={classes.icon} />
               )}
             </Grid>
-          </Box>
+          
           {isAuthenticated && (
-            <>
-              <Grid item xs={2} onClick={myLibrary} className={classes.lib}>
+            
+              <Grid item xs={2} onClick={myLibrary} className={classes.explore}>
                 <Button title="My Library" className={classes.btn} />
               </Grid>
-            </>
+            
           )}
           {!isAuthenticated && (
-            <Grid item xs={2} className={classes.lib}>
-              <Button
-                onClick={() => loginWithRedirect()}
-                title="Login"
-                className={classes.btn}
-              />
-            </Grid>
+            
+              <Grid item xs={2} className={classes.explore}>
+                <Button
+                  onClick={() => loginWithRedirect()}
+                  title="Login"
+                  className={classes.btn}
+                />
+              </Grid>
+            
           )}
           {isAuthenticated && (
             <>
-              <Grid item xs={2}>
-                <div>
+              <Grid item xs={2} className={classes.explore}>
                   <Button
                     title="Add Book"
                     className={classes.btn}
@@ -292,8 +297,8 @@ function TopNavBar() {
                 handleClose={(open: any) => handleClose()}
                 getBookDetails={(book: any) => getBookDetails(book)}
               /> */}
-                </div>
-                <div>
+                
+                
                   <Dialog
                     open={open}
                     onClose={handleClose}
@@ -311,8 +316,9 @@ function TopNavBar() {
                       />
                     </DialogActions>
                   </Dialog>
-                </div>
+                
               </Grid>
+
               <Grid item xs={2} className={classes.lib}>
                 <AccountMenu />
               </Grid>

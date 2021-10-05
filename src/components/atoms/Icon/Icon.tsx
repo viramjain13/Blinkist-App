@@ -2,7 +2,7 @@ import {RiArrowDropDownLine} from "react-icons/ri";
 
 const DropDownIcon = () => {
     return (
-        <RiArrowDropDownLine>Explore</RiArrowDropDownLine>
+        <RiArrowDropDownLine >Explore</RiArrowDropDownLine>
     );
 }
 

@@ -95,7 +95,7 @@ export default function MyLibrary({ booksList} :any) {
   const [finishedBooksList, setFinishedBooksList] = useState(newList1);
   const classes = useStyles();
   const [value, setValue] = useState(0);
-  let i = 0;
+  
   const handleChange = (event:any, newValue:any) => {
     setValue(newValue);
   };

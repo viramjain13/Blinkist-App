@@ -1,9 +1,17 @@
 import React from "react";
-import PropTypes from "prop-types";
+
 
 import IconButton from "@material-ui/core/IconButton";
 
-const IconButtonComponent = (props:any) => {
+type IconButtonProps={
+    icon:any, 
+    disabled:boolean,
+    onClick:any,
+    color:any,
+
+}
+
+const IconButtonComponent = (props:IconButtonProps) => {
     const { icon, disabled, onClick, color } = props;
     return(
         <IconButton color={color} disabled={disabled} onClick={onClick}>

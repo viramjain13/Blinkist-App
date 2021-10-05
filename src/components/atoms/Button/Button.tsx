@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
 
 const ButtonComponent = ({ ...props })  => (
-  <Button onClick={props.onClick} className={props.className}>
+  <Button data-testid='button' onClick={props.onClick} className={props.className}>
     {props.title}
   </Button>
 );

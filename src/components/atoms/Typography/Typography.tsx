@@ -18,7 +18,7 @@ const TypographyComponent = ({ variant, children,className, noWrap }:any) => {
     }
   };
 
-  return <Typography variant={getVariant(variant)} className={className} noWrap={noWrap}>{children}</Typography>
+  return <Typography data-testid='3' variant={getVariant(variant)} className={className} noWrap={noWrap}>{children}</Typography>
 };
 
 
