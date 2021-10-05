@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import logo from "../../atoms/logo.svg";
-import Button from "../../atoms/Button/Button";
+import Button from "../../atoms/Button/ButtonComponent";
 import MyLibrary from "../MyLibrary/MyLibrary";
 import CategoryBooks from "../CategoryBooks/CategoryBooks";
 import { ImBook } from "react-icons/im";

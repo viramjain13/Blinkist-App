@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Button from "./Button";
+import Button from "./ButtonComponent";
 import {  cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 afterEach(cleanup);

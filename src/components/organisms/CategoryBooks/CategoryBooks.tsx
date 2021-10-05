@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import HomeSearch from "../../molecules/SearchInput/SearchInput";
+import HomeSearch from "../../molecules/SearchInput/HomeSearch";
 import BookCard from "../../molecules/BookCard/BookCard";
 import { Grid } from "@material-ui/core";
 

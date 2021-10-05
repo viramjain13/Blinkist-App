@@ -5,7 +5,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Paper from '@material-ui/core/Paper';
 import Draggable from 'react-draggable';
 import Button from '@material-ui/core/Button';
-import TextField from '../../atoms/TextField/TextField';
+import TextField from '../../atoms/TextField/Text';
 import { makeStyles } from '@material-ui/core/styles';
 
 function PaperComponent(props:any) {
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
  
 
-export default function DraggableDialog({open,handleClose,getBookDetails}:any) {
+export default function DialogPop({open,handleClose,getBookDetails}:any) {
     const classes = useStyles();
     const [bookId, setId] = useState('');
     const [title, setTitle] = useState('');

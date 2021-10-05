@@ -1,6 +1,6 @@
 import React from 'react';
 import {  render} from '@testing-library/react';
-import Typography from './Typography';
+import Typography from './TypographyComponent';
 
 describe('Testing the title',()=>{
     it("checking the title",()=>{

@@ -8,7 +8,7 @@ import {
   TextField,
   
 } from "@material-ui/core";
-import Button from "../../atoms/Button/Button";
+import Button from "../../atoms/Button/ButtonComponent";
 
 
 const useStyles = makeStyles((theme) => ({

@@ -1,5 +1,5 @@
 import React from "react";
-import HomeSearch from "./SearchInput";
+import HomeSearch from "./HomeSearch";
 import { render, cleanup ,fireEvent} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
