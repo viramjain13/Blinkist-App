@@ -9,7 +9,7 @@ import {
   
 } from "@material-ui/core";
 import Button from "../../atoms/Button/Button";
-// import API from "../../../api";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,10 +43,7 @@ const AddBook = (props: any) => {
   const addBook = (e: any) => {
     e.preventDefault();
     
-    // API.post(`/explore`, bookData).then((res) => {
-    //   console.log(res);
-    //   console.log(res.data, res.status);
-    // });
+  
     
     console.log("book details submitted", formData);
     alert("Book details added successfully");

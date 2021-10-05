@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {ListItem,ListItemIcon} from '@material-ui/core';
 import { AiOutlineFieldTime } from "react-icons/ai";
-import theme from "../../../themes/theme";
+import theme from "../../../themes/ResponsiveFontTheme";
 
 const useStyles = makeStyles({
   root: {

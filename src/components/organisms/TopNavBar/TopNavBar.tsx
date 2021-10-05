@@ -21,7 +21,6 @@ import BookCards from "../BookCards/BookCards";
 import AccountMenu from "../AccountMenu/AccountMenu";
 import Image from "../../atoms/Image/Image";
 import AddBook from "../AddBook/AddBook";
-// import libraryBooks from "material-ui/svg-icons/av/library-books";
 const data1 = require("../../../data/books.json");
 const category = require("../../../category/categories.json");
 const useStyles = makeStyles((theme) => ({
@@ -52,9 +51,9 @@ const useStyles = makeStyles((theme) => ({
   },
   explore: {
     display: "contents",
-    // marginBottom: 200,
+    
     marginLeft: -30,
-    // marginTop: -15,
+    
   },
   dropdown: {
     fontSize: "xx-large",
@@ -70,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 1,
   },
   lib: {
-    // marginRight: -100,
+    
     marginTop:-8,
     marginLeft: 300,
   },
@@ -104,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 var newLibraryBooks: any = [];
-var newTwo: any = [];
+
 
 const Modal = ({ handleClose, show, children }: any) => {
   const classes = useStyles();
@@ -124,7 +123,7 @@ function TopNavBar() {
   const [libraryBooks, setLibraryBooks] = useState<any>([]);
   const [buttonPopup, setButtonPopup] = useState(false);
   const [categorySelected, setCategory] = useState([]);
-  const { user, isAuthenticated, loginWithRedirect } = useAuth0();
+  const {  isAuthenticated, loginWithRedirect } = useAuth0();
   const [filter, setFilter] = useState("");
   const [open, setOpen] = useState(false);
   const [isClick, setIsClick] = useState(false);
@@ -136,22 +135,7 @@ function TopNavBar() {
   const handleClose = () => {
     setOpen(false);
   };
-  // const getBookDetails = (book: any) => {
-  //   let newBook = {
-  //     id: book[0],
-  //     title: book[1],
-  //     author: book[2],
-  //     time: book[3],
-  //     category: book[4],
-  //     image: book[5],
-  //   };
-  //   newLibraryBooks.push(newBook);
-  //   setLibraryBooks((libraryBooks: any) => [...libraryBooks, newBook]);
-  //   newTwo.push(newBook);
-  //   for (let j = 0; j < newTwo.length; j++) {
-  //     setCategoryBooks((categoryBooks: any) => [...categoryBooks, newTwo[j]]);
-  //   }
-  // };
+ 
 
   const onChangeHandler = (e: any) => {
     console.log("on onChangeHandler");
@@ -171,17 +155,14 @@ function TopNavBar() {
     } else {
       setIsClick(true);
     }
-    // setLibraryBooks(books);
-    // setIsLoaded(true);
-
-    // setSearchResult(books);
+   
     console.log("setSearchResult");
     console.log(books);
     setSearchResult(books);
   };
   function myLibrary() {
     setLibrary(true);
-    // setExplore(false);
+    
     setButtonPopup(false);
   }
 
@@ -192,7 +173,7 @@ function TopNavBar() {
   };
 
   function explore() {
-    // setExplore(true);
+    
     setBooks(!showAllBooks);
   }
   const [displaySearchBar, setDisplaySearchBar] = React.useState("none");
@@ -208,10 +189,10 @@ function TopNavBar() {
   function toggleSearch() {
     if (displaySearchBar === "none") {
       setDisplaySearchBar("block");
-      // setIsClick(true);
+    
     } else {
       setDisplaySearchBar("none");
-      // setIsClick(false);
+      
     }
   }
   const textFieldContainerStyle: any = {
@@ -292,11 +273,7 @@ function TopNavBar() {
                     className={classes.btn}
                     onClick={handleClickOpen}
                   />
-                  {/* <DraggableDialog
-                open={open}
-                handleClose={(open: any) => handleClose()}
-                getBookDetails={(book: any) => getBookDetails(book)}
-              /> */}
+              
                 
                 
                   <Dialog
@@ -325,7 +302,7 @@ function TopNavBar() {
             </>
           )}
         </Grid>
-        {/* <Profile /> */}
+        
         <Modal class={classes.modal} show={showAllBooks}>
           <div>
             <h3 className={classes.header}>Explore by category</h3>

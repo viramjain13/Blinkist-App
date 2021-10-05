@@ -2,7 +2,6 @@ import React from 'react';
 import TopNavBar from '../../organisms/TopNavBar/TopNavBar';
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-// import theme from "../../../themes/theme";
 
 const useStyles = makeStyles((theme) => ({
     
