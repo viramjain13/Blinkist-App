@@ -18,7 +18,7 @@ const AccountMenu = ():any => {
     setAnchorEl(null);
   };
 
-  const { user, isAuthenticated, logout } = useAuth0();
+  const {  isAuthenticated, logout } = useAuth0();
   let accountMenu: any;
   if (isAuthenticated) {
     accountMenu = (

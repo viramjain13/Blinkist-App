@@ -3,8 +3,8 @@ import { Typography } from "@material-ui/core";
 
 
 const TypographyComponent = ({ variant, children,className, noWrap }:any) => {
-  const getVariant = (variant:any) => {
-    switch (variant) {
+  const getVariant = (vari:any) => {
+    switch (vari) {
       case "alphaValue":
         return "h1";
       case "alphaHeader1":

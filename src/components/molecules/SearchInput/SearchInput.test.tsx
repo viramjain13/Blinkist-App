@@ -2,6 +2,7 @@ import React from "react";
 import HomeSearch from "./HomeSearch";
 import { render, cleanup ,fireEvent} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
+import { isJSDocSeeTag } from "typescript";
 
 afterEach(cleanup);
 describe('checking the home search', () => {
@@ -15,3 +16,13 @@ it('Checking the search',() => {
         expect(handleChange).toHaveBeenCalledTimes(1);
     });
 });
+
+
+afterEach(cleanup);
+it('test the placeholder in input', () => {
+    const {getByPlaceholderText} = render(<HomeSearch onChange={jest.fn()}/>);
+    
+  getByPlaceholderText('Search by title or author');
+
+});
+
